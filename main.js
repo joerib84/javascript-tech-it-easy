@@ -161,3 +161,32 @@ const inventory = [
     sold: 8,
   },
 ];
+
+// Opdracht 1
+
+const tvTypes = inventory.map((tvType) => {
+  return tvType.type;
+})
+
+console.log(tvTypes);
+
+const soldOutTvs = inventory.filter((soldOutTv) => {
+  return soldOutTv.sold >= soldOutTv.originalStock;
+})
+
+console.log(soldOutTvs);
+
+const haveAmbilight = inventory.filter((hasAmbilight) => {
+  if (hasAmbilight.options.ambiLight === true) {
+    return true
+  }
+})
+
+console.log(haveAmbilight);
+
+inventory.sort((a, b) => {
+  return a.price - b.price;
+})
+
+console.log(inventory);
+
