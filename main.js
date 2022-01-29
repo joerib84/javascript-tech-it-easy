@@ -162,7 +162,7 @@ const inventory = [
   },
 ];
 
-// Opdracht 1
+// Opdracht 1a
 
 const tvTypes = inventory.map((tvType) => {
   return tvType.type;
@@ -170,11 +170,15 @@ const tvTypes = inventory.map((tvType) => {
 
 console.log(tvTypes);
 
+// Opdracht 1b
+
 const soldOutTvs = inventory.filter((soldOutTv) => {
   return soldOutTv.sold >= soldOutTv.originalStock;
 })
 
 console.log(soldOutTvs);
+
+// Opdracht 1c
 
 const haveAmbilight = inventory.filter((hasAmbilight) => {
   if (hasAmbilight.options.ambiLight === true) {
@@ -184,9 +188,73 @@ const haveAmbilight = inventory.filter((hasAmbilight) => {
 
 console.log(haveAmbilight);
 
+// Opdracht 1d
+
 inventory.sort((a, b) => {
   return a.price - b.price;
 })
 
 console.log(inventory);
+
+// Opdracht 2a
+
+let amountSold = 0
+
+for (let i = 0; i < inventory.length; i++) {
+  amountSold = amountSold + inventory[i].sold
+}
+
+console.log(amountSold);
+
+// Opdracht 2b
+
+const amountTvsSold = document.getElementById("container")
+
+const amountTvsSoldTitle = document.createElement("h3")
+amountTvsSoldTitle.textContent = "Aantal verkochte tv's"
+
+const amountTvsSoldContent = document.createElement("p")
+amountTvsSoldContent.textContent = amountSold
+amountTvsSoldContent.setAttribute("id", "amountSold-color")
+
+amountTvsSold.appendChild(amountTvsSoldTitle);
+amountTvsSold.appendChild(amountTvsSoldContent);
+
+// Opdracht 2c
+
+let amountBought = 0
+
+for (let i = 0; i < inventory.length; i++) {
+  amountBought = amountBought + inventory[i].originalStock
+}
+
+console.log(amountBought);
+
+// Opdracht 2d
+
+const amountTvsBought = document.getElementById("container-2")
+
+const amountTvsBoughtTitle = document.createElement("h3")
+amountTvsBoughtTitle.textContent = "Aantal ingekochte tv's"
+
+const amountTvsBoughtContent = document.createElement("p")
+amountTvsBoughtContent.textContent = amountBought
+amountTvsBoughtContent.setAttribute("id", "amountBought-color")
+
+amountTvsBought.appendChild(amountTvsBoughtTitle);
+amountTvsBought.appendChild(amountTvsBoughtContent);
+
+// Opdracht 2e
+
+const tvsToBeSold = document.getElementById("container-3")
+
+const tvsToBeSoldTitle = document.createElement("h3")
+tvsToBeSoldTitle.textContent = "Aantal nog te verkopen tv's"
+
+const tvsToBeSoldContent = document.createElement("p")
+tvsToBeSoldContent.textContent = `${amountBought - amountSold}`;
+tvsToBeSoldContent.setAttribute("id", "tvsToBeSold-color")
+
+tvsToBeSold.appendChild(tvsToBeSoldTitle);
+tvsToBeSold.appendChild(tvsToBeSoldContent);
 
