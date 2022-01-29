@@ -5,6 +5,11 @@ body {
 
 h1 {
     font-size: 40px;
+    margin-left: 70px;
+}
+
+h2, h3, p, ul {
+    margin-left: 70px;
 }
 
 #amountSold-color {
@@ -17,4 +22,12 @@ h1 {
 
 #tvsToBeSold-color {
     color: red;
+}
+
+#one-item {
+    white-space: pre-line;
+}
+
+#all-items {
+    white-space: pre-line;
 }

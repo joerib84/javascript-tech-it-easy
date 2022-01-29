@@ -279,7 +279,11 @@ tvsToBeSold.appendChild(tvsToBeSoldContent);
 function tvObjects(array) {
     const brandsList = document.getElementById("list");
 
-    array.map((listTv) => {
+    const brandsListTitle = document.createElement("h2");
+    brandsListTitle.textContent = "Wij verkopen deze merken TV's";
+
+    brandsList.appendChild(brandsListTitle);
+        array.map((listTv) => {
         const newList = document.createElement("li");
         newList.textContent = listTv.brand;
 
