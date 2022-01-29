@@ -182,7 +182,7 @@ console.log(soldOutTvs);
 
 const haveAmbilight = inventory.filter((hasAmbilight) => {
   if (hasAmbilight.options.ambiLight === true) {
-    return true
+    return true;
   }
 })
 
@@ -198,7 +198,7 @@ console.log(inventory);
 
 // Opdracht 2a
 
-let amountSold = 0
+let amountSold = 0;
 
 for (let i = 0; i < inventory.length; i++) {
   amountSold = amountSold + inventory[i].sold
@@ -208,21 +208,21 @@ console.log(amountSold);
 
 // Opdracht 2b
 
-const amountTvsSold = document.getElementById("container")
+const amountTvsSold = document.getElementById("container");
 
-const amountTvsSoldTitle = document.createElement("h3")
-amountTvsSoldTitle.textContent = "Aantal verkochte tv's"
+const amountTvsSoldTitle = document.createElement("h3");
+amountTvsSoldTitle.textContent = "Aantal verkochte tv's";
 
-const amountTvsSoldContent = document.createElement("p")
-amountTvsSoldContent.textContent = amountSold
-amountTvsSoldContent.setAttribute("id", "amountSold-color")
+const amountTvsSoldContent = document.createElement("p");
+amountTvsSoldContent.textContent = amountSold;
+amountTvsSoldContent.setAttribute("id", "amountSold-color");
 
 amountTvsSold.appendChild(amountTvsSoldTitle);
 amountTvsSold.appendChild(amountTvsSoldContent);
 
 // Opdracht 2c
 
-let amountBought = 0
+let amountBought = 0;
 
 for (let i = 0; i < inventory.length; i++) {
   amountBought = amountBought + inventory[i].originalStock
@@ -232,29 +232,59 @@ console.log(amountBought);
 
 // Opdracht 2d
 
-const amountTvsBought = document.getElementById("container-2")
+const amountTvsBought = document.getElementById("container-2");
 
-const amountTvsBoughtTitle = document.createElement("h3")
-amountTvsBoughtTitle.textContent = "Aantal ingekochte tv's"
+const amountTvsBoughtTitle = document.createElement("h3");
+amountTvsBoughtTitle.textContent = "Aantal ingekochte tv's";
 
-const amountTvsBoughtContent = document.createElement("p")
-amountTvsBoughtContent.textContent = amountBought
-amountTvsBoughtContent.setAttribute("id", "amountBought-color")
+const amountTvsBoughtContent = document.createElement("p");
+amountTvsBoughtContent.textContent = amountBought;
+amountTvsBoughtContent.setAttribute("id", "amountBought-color");
 
 amountTvsBought.appendChild(amountTvsBoughtTitle);
 amountTvsBought.appendChild(amountTvsBoughtContent);
 
 // Opdracht 2e
 
-const tvsToBeSold = document.getElementById("container-3")
+const tvsToBeSold = document.getElementById("container-3");
 
-const tvsToBeSoldTitle = document.createElement("h3")
-tvsToBeSoldTitle.textContent = "Aantal nog te verkopen tv's"
+const tvsToBeSoldTitle = document.createElement("h3");
+tvsToBeSoldTitle.textContent = "Aantal nog te verkopen tv's";
 
-const tvsToBeSoldContent = document.createElement("p")
+const tvsToBeSoldContent = document.createElement("p");
 tvsToBeSoldContent.textContent = `${amountBought - amountSold}`;
-tvsToBeSoldContent.setAttribute("id", "tvsToBeSold-color")
+tvsToBeSoldContent.setAttribute("id", "tvsToBeSold-color");
 
 tvsToBeSold.appendChild(tvsToBeSoldTitle);
 tvsToBeSold.appendChild(tvsToBeSoldContent);
 
+// Opdracht 3a
+
+// const brandsList = document.getElementById("list");
+//
+// const brandsListTitle = document.createElement("h3");
+// brandsListTitle.textContent = "Wij verkopen deze merken TV's";
+//
+// brandsList.appendChild(brandsListTitle);
+//
+// inventory.map((listTv) => {
+//   const newList = document.createElement("li");
+//   newList.textContent = listTv.brand;
+//
+//   return brandsList.appendChild(newList);
+// })
+
+// Opdracht 3b
+
+function tvObjects(array) {
+    const brandsList = document.getElementById("list");
+
+    array.map((listTv) => {
+        const newList = document.createElement("li");
+        newList.textContent = listTv.brand;
+
+        return brandsList.appendChild(newList);
+    })
+}
+
+tvObjects(inventory);
