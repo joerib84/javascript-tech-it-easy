@@ -1,0 +1,33 @@
+body {
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+    background-color: aliceblue;
+}
+
+h1 {
+    font-size: 40px;
+    margin-left: 70px;
+}
+
+h2, h3, p, ul {
+    margin-left: 70px;
+}
+
+#amountSold-color {
+    color: green;
+}
+
+#amountBought-color {
+    color: blue;
+}
+
+#tvsToBeSold-color {
+    color: red;
+}
+
+#one-item {
+    white-space: pre-line;
+}
+
+#all-items {
+    white-space: pre-line;
+}
